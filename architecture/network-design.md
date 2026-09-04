@@ -11,7 +11,7 @@ domain-joined client, in Azure's Belgium Central region.
 | Virtual network | vnet-belgiumcentral-1 | 172.16.0.0/24 |
 | Subnet | snet-belgiumcentral-1 | shared by DC01 and CLIENT01 |
 | DC01 | Windows Server 2022, Standard_B2as_v2 | private IP 172.16.0.4 (static) |
-| CLIENT01 | Windows 11 Enterprise, Standard_B2as_v2 | private IP 172.16.0.5 |
+| CLIENT01 | Windows 11 Enterprise, Standard_B2as_v2 | private IP 172.16.0.5, joined to homelab.local |
 
 ## Design decisions
 - **Static private IP on DC01**: DNS records and domain lookups resolve
@@ -27,3 +27,9 @@ domain-joined client, in Azure's Belgium Central region.
   Central US, Norway East, Canada Central) via subscription policy.
   Belgium Central was selected after Central US, West US, and Canada
   Central all hit VM-size capacity exhaustion at time of deployment.
+- **VNet DNS servers set to DC01's static IP (172.16.0.4)**: required
+  so domain-joined clients can resolve `homelab.local` to locate the
+  domain controller. Azure's default DNS has no knowledge of private
+  AD DNS zones — this must be set explicitly, and was the root cause
+  of an initial domain-join failure (see
+  troubleshooting/dns-not-pointing-to-dc.md).
