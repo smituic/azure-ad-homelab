@@ -11,7 +11,7 @@ domain-joined client, in Azure's Belgium Central region.
 | Virtual network | vnet-belgiumcentral-1 | 172.16.0.0/24 |
 | Subnet | snet-belgiumcentral-1 | shared by DC01 and CLIENT01 |
 | DC01 | Windows Server 2022, Standard_B2as_v2 | private IP 172.16.0.4 (static) |
-| CLIENT01 | Windows 11 Enterprise, Standard_B2as_v2 | private IP TBD |
+| CLIENT01 | Windows 11 Enterprise, Standard_B2as_v2 | private IP 172.16.0.5 |
 
 ## Design decisions
 - **Static private IP on DC01**: DNS records and domain lookups resolve
