@@ -28,4 +28,4 @@ See [`architecture/network-design.md`](architecture/network-design.md) for detai
 - `security/` — least-privilege notes, Entra ID (stretch goal)
 
 ## Status
-🚧 In progress — DC01 deployed and promoted, CLIENT01 in progress.
+In progress — DC01 promoted to domain controller, CLIENT01 deployed and awaiting domain-join.
