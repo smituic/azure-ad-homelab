@@ -28,4 +28,6 @@ See [`architecture/network-design.md`](architecture/network-design.md) for detai
 - `security/` — least-privilege notes, Entra ID (stretch goal)
 
 ## Status
-In progress — CLIENT01 successfully domain-joined to homelab.local. Next: create OUs, security groups, and test users.
+In progress — OUs (IT/Finance/Sales), security group (IT-HelpDesk),
+and first test user created. Ticket #1 (RDP authorization) diagnosed
+and resolved. Next: Group Policy, remaining tickets.
