@@ -15,7 +15,14 @@ linked to an OU applies to every user/computer inside it automatically.
   password resets), separate from IT-wide policy via the OU itself.
 
 ## Users
-- Smit Patel (`spate`) — created in the IT OU, added to `IT-Helpdesk`.
+- Smit Patel (`spate`) — IT OU, member of `IT-Helpdesk`.
+- Subham Patel (`supate`) — Finance OU.
+- Jyot Patel (`jpate`) — Sales OU.
+
+All three users were also individually granted local RDP access
+(added to Remote Desktop Users on CLIENT01) to support testing — see
+[troubleshooting/rdp-authorization.md](../troubleshooting/rdp-authorization.md)
+for why this is required separately from domain account creation.
 
 ## Design note: OUs vs Groups
 OUs and groups solve different problems and are not interchangeable:
