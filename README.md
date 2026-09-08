@@ -28,6 +28,7 @@ See [`architecture/network-design.md`](architecture/network-design.md) for detai
 - `security/` — least-privilege notes, Entra ID (stretch goal)
 
 ## Status
-In progress — OUs (IT/Finance/Sales), security group (IT-HelpDesk),
-and first test user created. Ticket #1 (RDP authorization) diagnosed
-and resolved. Next: Group Policy, remaining tickets.
+In progress — First GPO (Finance Control Panel restriction) created,
+linked, and verified against two OUs. Next: remaining troubleshooting
+tickets (DNS failure, domain login failure, GPO not applying, service
+failure).
