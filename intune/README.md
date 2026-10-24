@@ -7,7 +7,7 @@ A Windows 11 VM joined to Microsoft Entra ID and managed by Intune. Lab 1 (`acti
 - Enrolled a Windows 11 endpoint into Intune via Entra ID join with automatic MDM enrollment
 - Deployed a compliance policy (firewall, Defender, minimum OS) and a configuration profile (screen lock, block Microsoft accounts)
 - Deployed a required app (VLC) with no user interaction
-- Diagnosed a policy that arrived at the device but did not appear in the console
+- Diagnosed policies that were assigned but never delivered (user vs. device targeting)
 - Broke the device on purpose (firewall off), watched it go noncompliant, fixed it, and confirmed recovery
 
 ## Architecture
@@ -41,7 +41,7 @@ A Windows 11 VM joined to Microsoft Entra ID and managed by Intune. Lab 1 (`acti
 ## Documentation
 
 - [Enrollment walkthrough](enrollment.md)
-- [Ticket: policy delivered but not showing in the console](troubleshooting/policy-not-applying.md)
+- [Ticket: policies assigned but not applying](troubleshooting/policy-not-applying.md)
 - [Ticket: noncompliant device (firewall off)](troubleshooting/noncompliant-device.md)
 
 ## Notes
