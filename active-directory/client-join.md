@@ -31,4 +31,4 @@ domain, authenticating against DC01 as the domain controller.
 `labadmin` (a Domain Admin account) was used for this login for
 simplicity. In a production environment, admin credentials would be
 kept separate from day-to-day login accounts to limit the impact of a
-compromised account — see `security/least-privilege.md` (planned).
+compromised account — not implemented in this lab.

@@ -57,4 +57,4 @@ For more than a handful of users, granting RDP access per-machine via
 local group membership doesn't scale. The correct approach is a GPO
 that adds a domain group (e.g., IT-Helpdesk) to the Remote Desktop
 Users group on target machines automatically — see
-`active-directory/group-policy.md` (planned).
+[Group Policy](../active-directory/group-policy.md).
