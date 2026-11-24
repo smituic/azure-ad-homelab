@@ -59,6 +59,21 @@ The device appeared in Intune with Alice Rivera as primary user, ownership Corpo
 
 ![Device in Intune](screenshots/11-device-in-intune.png)
 
+## 7. Required app: VLC
+
+To show that Intune can install software with no user action, I deployed an app as **Required**.
+
+I first tried 7-Zip using the "Microsoft Store app (new)" type, but a search for it returned no results. The Store connection itself worked: searching for VLC returned results. I deployed **VLC (Win32)** instead, which is a classic desktop installer and installs system-wide.
+
+I assigned it as Required to the device group `IT-Managed-Devices-Win`, not the user group. This applies the lesson from the policy ticket: nobody signs in as Alice or Bob on this VM, so a user assignment would never install.
+
+![VLC assignment: Required to the device group](screenshots/28-vlc-assignment.png)
+
+After a sync, the portal reported the app as **Installed** for `win11-intune`, and `Test-Path "C:\Program Files\VideoLAN\VLC\vlc.exe"` on the VM returned `True`. The device install status shows "No user" because the app was installed in the device context.
+
+![VLC reported as Installed in Intune](screenshots/18-app-installed.png)
+![VLC present on the VM](screenshots/19-vlc-on-device.png)
+
 ## Notes
 
 - The VM clock is Pacific time and the Intune portal is Central time, so the same event shows two hours apart across screenshots.

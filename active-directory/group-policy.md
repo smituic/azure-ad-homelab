@@ -69,3 +69,42 @@ behavior, especially in RDP/VM environments. Also: elevated
 user context and will report on that account's policy, not the
 visibly logged-in user's — always verify `gpresult`'s "User name"
 field matches the account you intend to check.
+
+## Group Policy — All Departments RDP Access
+
+### Summary
+
+Domain users are not automatically allowed to sign in over RDP. Access
+is controlled by the local `Remote Desktop Users` group on each machine.
+Instead of adding users one at a time (as in the RDP authorization
+ticket), this GPO adds `HOMELAB\Domain Users` to that group on every
+machine in scope.
+
+- Policy: Computer Configuration > Preferences > Control Panel Settings >
+  Local Users and Groups > Remote Desktop Users (built-in) > Add
+  `HOMELAB\Domain Users`
+- Linked to: IT, Finance, Sales and Computer OUs
+
+### Problem: policy did not apply
+
+The GPO was built correctly but CLIENT01 did not receive it. CLIENT01 was
+still in the default `Computers` container, which is not an OU, so GPOs
+cannot be linked to it. Computer Configuration settings follow the
+computer object's location in AD, not the user's.
+
+### Fix
+
+Created a `Computer` OU, moved CLIENT01 into it, and linked the GPO there.
+
+### Verification
+
+```
+Get-LocalGroupMember -Group "Remote Desktop Users"
+```
+
+`HOMELAB\Domain Users` is listed on CLIENT01.
+
+### Lesson
+
+Computer settings apply based on where the computer object lives. Links on
+the user OUs have no effect on this policy; only the Computer OU link does.

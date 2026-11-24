@@ -37,21 +37,17 @@ See [`intune/README.md`](intune/README.md) for details.
 
 ## Structure
 
-- `architecture/` — network design and diagrams
-- `active-directory/` — DC setup, users/groups/OUs, Group Policy
-- `networking/` — DNS configuration
-- `powershell/` — automation scripts used in the lab
-- `troubleshooting/` — simulated incident tickets for Lab 1, fully diagnosed
+- `architecture/` — network design
+- `active-directory/` — DC setup, domain join, users/groups/OUs, Group Policy
+- `troubleshooting/` — Lab 1 incident tickets (RDP authorization, DNS not pointing to the DC)
 - `intune/` — Lab 2: enrollment walkthrough, screenshots, and two incident tickets
-- `security/` — least-privilege notes, Entra ID (stretch goal)
 
 ## Status
 
 **Lab 1:** Domain controller, domain join, OUs, users and groups, and
 three GPOs are built and verified. Two incident tickets are documented
-(RDP authorization, DNS not pointing to the DC). Next: remaining
-tickets (domain login failure, service failure) and PowerShell
-automation.
+(RDP authorization, DNS not pointing to the DC). Planned: domain login
+failure and service failure tickets, and PowerShell automation.
 
 **Lab 2:** Complete. Device enrolled, compliance and configuration
 policies and a required app deployed, and two incident tickets
